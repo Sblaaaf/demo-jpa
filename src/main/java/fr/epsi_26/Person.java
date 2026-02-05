@@ -1,6 +1,8 @@
 package fr.epsi_26;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.io.Serializable;
@@ -10,6 +12,7 @@ import java.io.Serializable;
 @Entity
 public class Person implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nom;
     private String prenom;
@@ -55,11 +58,8 @@ public class Person implements Serializable {
     public void setAge(int age) {
         this.age = age;
     }
-
     @Override
     public String toString() {
 
     }
-
-
 }
