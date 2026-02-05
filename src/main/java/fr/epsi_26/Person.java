@@ -1,21 +1,24 @@
 package fr.epsi_26;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 // permet de garder les objet en cache pour optimisation
 
 
 @Entity
+@Table(name = "id")
 public class Person implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="ID")
     private int id;
+    @Column(name="Nom")
     private String nom;
+    @Column(name="Prenom")
     private String prenom;
+    @Transient
+    @Column(name="Age")
     private int age;
 
     public Person() {
@@ -60,6 +63,11 @@ public class Person implements Serializable {
     }
     @Override
     public String toString() {
-
+        return "Person{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
