@@ -1,6 +1,7 @@
 package fr.epsi_26;
 
 import jakarta.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
     public class App {
